@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+
+    <script src="/scripts/cars.js"></script>
+    <script src="/scripts/navbar.js"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1 class="text-center">Admin panel</h1>
+    <h3 class="text-center">Cars table</h3>
+    
+    <div class="container p-5">
+        <table class="table table-borderless w-75 mx-auto">
+            <tr>
+                <th class="text-end">
+                    <button class="btn btn-primary" type="button" onclick="location.href='/addCar.html'">Add Car</button>
+                </th>
+            </tr>
+        </table>
+        <table id="cars-table" class="table table-bordered w-75 mx-auto">
+            <thead>
+                <tr>
+                <th class="text-start">Model</th>
+                <th class="text-start">Battery capacity kWh</th>
+                <th class="text-start">Real range</th>
+                <th class="text-start">Efficiency Wh/km</th>
+                <th class="text-start">Operations</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script>
+        navBar();
+        addScriptAndLinkTags();
+        cars1();
+        cars2();
+    </script>
+</body>
+</html>

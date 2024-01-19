@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+
+    <script src="/scripts/navbar.js"></script>
+    <script src="/scripts/users.js"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1 class="text-center">Admin panel</h1>
+    <h3 class="text-center">Users table</h3>
+    
+    <div class="container p-5">
+        <table class="table table-borderless w-50 mx-auto">
+            <tr>
+                <th class="text-end">
+                    <button class="btn btn-primary" type="button" onclick="location.href='/addUser.html'">Add User</button>
+                </th>
+            </tr>
+        </table>
+        <table id="users-table" class="table table-bordered w-50 mx-auto">
+            <thead>
+                <tr>
+                    <th class="text-start">Username</th>
+                    <th class="text-start">Email</th>
+                    <th class="text-start">Operations</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+
+    <script>
+        navBar();
+        addScriptAndLinkTags();
+        allUsers();
+    </script>
+</body>
+</html>

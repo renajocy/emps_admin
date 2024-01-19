@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit car</title>
+    <script src="/scripts/cars.js"></script>
+    <script src="/scripts/plugs.js"></script>
+    <script src="/scripts/navbar.js"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1 class="text-center">Admin panel</h1>
+    <h3 class="text-center">Edit car</h3>
+
+    <div class="container">
+        <form class="form-control border-0" method="post" onsubmit="editCar(event)">
+
+            <input type="hidden" id="id" name="id">
+            
+            <div class="input-group mb-3">
+                <span class="input-group-text" for="model">Model</span>
+                <input class="form-control" type="text" id="model" name="model" required>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" for="battery_capacity">Battery capacity</span>
+                <input class="form-control" type="number" step="any" id="battery_capacity" name="battery_capacity" required>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" for="real_range">Real range</span>
+                <input class="form-control" type="number" id="real_range" name="real_range" required>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" for="efficiency">Efficiency</span>
+                <input class="form-control" type="number" id="efficiency" name="efficiency" required>
+            </div>
+            <div class="container w-75" id="plug_types">
+                <label class="p-2">Compatable plugs:</label>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <div class="p-1">
+                    <button class="btn btn-secondary" type="button" onclick="location.href='/index.html'">Back</button>
+                </div>
+                <div class="p-1">
+                    <button class="btn btn-success" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        navBar();
+        addScriptAndLinkTags();
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        fillCarEdit(id);
+        printPlugs(id);
+    </script>
+</body>
+</html>
